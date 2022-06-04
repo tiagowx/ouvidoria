@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
     username: "root",
     password: "my_secret_password",
     database: "ouvidoriaDb",
-    synchronize: true,
+    synchronize: false,
     logging: false,
     entities: entities,
     migrations: [],
