@@ -5,7 +5,6 @@
    "type": "commonjs",
    "devDependencies": {
       "@types/node": "^16.11.10",
-      "erdia": "^0.6.1",
       "ts-node": "10.7.0",
       "typeorm-codebase-sync": "^1.1.2",
       "typescript": "4.5.2"
@@ -21,8 +20,6 @@
    },
    "scripts": {
       "start": "ts-node src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs",
-      "typeorm-diagram": "ts-node -r tsconfig-paths/register ./node_modules/.bin/erdia htmlfull -p src/data-source.ts -v -o entity.html",
-      "typeorm-sync": "typeorm-codebase-sync addReferences --dataSource ./src/db/data-source.ts --migrations ./src/db/migrations --entities ./src/db/entities --subscribers ./src/db/subscribers"
+      "typeorm": "typeorm-ts-node-commonjs -d src/data-source"
    }
 }

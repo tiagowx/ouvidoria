@@ -28,7 +28,7 @@ export class Manifestacao {
   descricao: string;
 
   @ManyToOne(() => EstacaoMetro, (estacaoMetro) => estacaoMetro)
-  estacaoMetroCodigo: EstacaoMetro;
+  estacaoMetro: EstacaoMetro;
 
   @CreateDateColumn()
   criadaEm: Timestamp;

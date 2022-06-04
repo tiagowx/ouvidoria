@@ -6,22 +6,22 @@ import Repository from "../repository";
 export class UsuarioController {
 
     async all(req: Request, res: Response, next: NextFunction) {
-        return Repository(Usuario).find();
+        return Repository.getRepository(Usuario).find();
     }
 
     async one(req: Request, res: Response, next: NextFunction) {
-        return Repository(Usuario).findOneBy({ codigo: req.params.id });
+        return Repository.getRepository(Usuario).findOneBy({ codigo: req.params.codigo });
     }
 
     async save(req: Request, res: Response, next: NextFunction) {
 
-        const user = await Repository(Usuario).create(req.body);
-        return Repository(Usuario).save(user);
+        const user = await Repository.getRepository(Usuario).create(req.body);
+        return Repository.getRepository(Usuario).save(user);
     }
 
     async remove(req: Request, res: Response, next: NextFunction) {
-        let userToRemove = await Repository(Usuario).findOneBy({ codigo: req.params.id })
-        await Repository(Usuario).remove(userToRemove);
+        let userToRemove = await Repository.getRepository(Usuario).findOneBy({ codigo: req.params.codigo })
+        await Repository.getRepository(Usuario).remove(userToRemove);
     }
 
 }

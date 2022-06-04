@@ -1,5 +1,5 @@
 import { AppDataSource} from "../data-source";
 
-const Repository = AppDataSource.getRepository;
+const Repository = AppDataSource;
 
 export default Repository;

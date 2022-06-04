@@ -7,6 +7,11 @@ POST http://localhost:3000/users HTTP/1.1
 content-type: application/json
 
 {
+    "nomeCompleto": "Tiago Batista",
+    "cpf":"12332112321",
     "email": "asdfasd@adsfas.com",
-    "password": "321465",
+    "telefone": "12312312312"
 }
+###
+DELETE  http://localhost:3000/users/1 HTTP/1.1
+content-type: application/json

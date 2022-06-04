@@ -18,5 +18,3 @@ export const AppDataSource = new DataSource({
     migrations: [],
     subscribers: [],
 })
-
-console.log(process.env.DATABASE_NAME)
