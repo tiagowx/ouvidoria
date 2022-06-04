@@ -1,3 +1,9 @@
-import { User } from './User'
+import { EstacaoMetro } from './EstacaoMetro';
+import { Usuario } from './Usuario';
+import {Manifestacao} from './Manifestacao';
 
-export default User;
+export default { 
+  EstacaoMetro,
+  Manifestacao,
+  Usuario
+};
