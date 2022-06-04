@@ -1,17 +1,22 @@
+import process = require("process");
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 import entities from './entities'
 
+require ('dotenv').config();
+
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "localhost",
+    host: process.env.DATABASE_HOST,
     port: 6033,
-    username: "root",
-    password: "my_secret_password",
-    database: "ouvidoriaDb",
+    username: process.env.DATABASE_USERNAME,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
     synchronize: false,
     logging: false,
     entities: entities,
     migrations: [],
     subscribers: [],
 })
+
+console.log(process.env.DATABASE_NAME)
