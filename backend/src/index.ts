@@ -7,8 +7,10 @@ import { Usuario } from "./entities/Usuario"
 
 AppDataSource.initialize().then(async () => {
 
+    const cors = require('cors') 
     // create express app
     const app = express()
+    app.use(cors())
     app.use(bodyParser.json())
 
     // register express routes from defined application routes
@@ -28,7 +30,7 @@ AppDataSource.initialize().then(async () => {
     // ...
 
     // start express server
-    app.listen(3000)
+    app.listen(3001)
 
     // insert new users for test
     // await AppDataSource.manager.save(
@@ -39,6 +41,6 @@ AppDataSource.initialize().then(async () => {
     //     })
     // )
 
-    console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results")
+    console.log("Express server has started on port 3000. Open http://localhost:3001/users to see results")
 
 }).catch(error => console.log(error))
