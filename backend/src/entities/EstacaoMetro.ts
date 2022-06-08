@@ -2,7 +2,6 @@ import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, Unique, Tree } f
 import { LinhaMetro } from "../enums/LinhaMetro";
 
 @Entity()
-@Tree("materialized-path")
 export class EstacaoMetro {
 
   @PrimaryGeneratedColumn()
@@ -11,6 +10,6 @@ export class EstacaoMetro {
   @Column()
   nome: string;
 
-  @Column({type:"enum", enum:LinhaMetro})
+  @Column({ type: "enum", enum: LinhaMetro, default: LinhaMetro.LINHA_1 })
   linhaMetro: LinhaMetro;
 }

@@ -1,9 +1,10 @@
-GET http://localhost:3000/users HTTP/1.1
+// Usiario
+GET http://localhost:3001/usuario HTTP/1.1
 ###
-GET http://localhost:3000/users/1 HTTP/1.1
+GET http://localhost:3001/usuario/1 HTTP/1.1
 
 ###
-POST http://localhost:3000/users HTTP/1.1
+POST http://localhost:3001/usuario HTTP/1.1
 content-type: application/json
 
 {
@@ -13,5 +14,5 @@ content-type: application/json
     "telefone": "12312312312"
 }
 ###
-DELETE  http://localhost:3000/users/1 HTTP/1.1
+DELETE  http://localhost:3001/usuario/1 HTTP/1.1
 content-type: application/json

@@ -15,8 +15,8 @@ export class UsuarioController {
 
     async save(req: Request, res: Response, next: NextFunction) {
 
-        const user = await Repository.getRepository(Usuario).create(req.body);
-        return Repository.getRepository(Usuario).save(user);
+        const usuario = await Repository.getRepository(Usuario).create(req.body);
+        return Repository.getRepository(Usuario).save(usuario);
     }
 
     async remove(req: Request, res: Response, next: NextFunction) {

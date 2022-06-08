@@ -1,7 +1,8 @@
 import { IUsuario } from "@interfaces/IUsuario";
 import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import cpfFormatter from "helpers/shortTools";
 import { FormEvent, useState } from "react";
-import { UsuarioService } from "services/usuarioService";
+import { UsuarioService } from "services/UsuarioService";
 
 
 
@@ -37,7 +38,6 @@ const Contact = () => {
       <Box
         component='form'
         onSubmit={handlerSubmit}
-
         sx={{
           display: 'flex',
           width: '100vw',
@@ -53,32 +53,36 @@ const Contact = () => {
         }}>
           <Typography component='h3' variant='h3'>Usuário</Typography>
           <TextField
-            label='Nome'
+            label='Nome Completo'
             type='text'
-            onChange={(e) => setNomeCompleto(e.target.value)}
+            onChange={(e) => setUsuario({ ...usuario, nomeCompleto: e.target.value})}
             required />
           <TextField
             label='CPF'
             type='text'
-            onChange={(e) => setCpf(e.target.value)}
+            inputMode="numeric"
+            onChange={(e) => setUsuario({
+              ...usuario,
+              cpf: cpfFormatter(e.target.value)
+            })}
+            value={usuario.cpf}
             required
           />
           <TextField
             label='Email'
             type='email'
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setUsuario({ ...usuario, email: e.target.value })}
             required
           />
           <TextField
             label='Telefone'
-            type='telefone'
-            onChange={(e) => setTelefone(e.target.value)}
+            type='tel'
+            onChange={(e) => setUsuario({ ...usuario, telefone: e.target.value})}
             required
           />
         </Box>
         <Box width='50%'>
           <Typography component='h3' variant='h3'>Manifestação</Typography>
-
         </Box>
         <Button component='button' type='submit'>Enviar</Button>
       </Box>

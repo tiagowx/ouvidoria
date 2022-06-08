@@ -1,6 +1,6 @@
-import { UsuarioController } from "./controllers/UsuarioController"
+import { UsuarioController } from "../controllers/UsuarioController";
 
-export const Routes = [{
+export const usuarioRoutes = [{
     method: "get",
     route: "/usuario",
     controller: UsuarioController,
@@ -20,4 +20,4 @@ export const Routes = [{
     route: "/usuario/:id",
     controller: UsuarioController,
     action: "remove"
-}]
+}];

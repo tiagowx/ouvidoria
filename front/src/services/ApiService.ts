@@ -22,6 +22,9 @@ export class ApiService {
   public get<T = any>(url: string, params?: any): Promise<T> {
     return this.api.get(url, params);
   }
+  public getAll<T = any>(url: string, params?: any): Promise<T[]> {
+    return this.api.get(url,);
+  }
 
   public post<T = any>(url: string, body: any): Promise<T> {
     return this.api.post(url, body);

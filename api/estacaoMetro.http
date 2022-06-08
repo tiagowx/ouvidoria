@@ -1,0 +1,16 @@
+// Estacao Metro
+GET http://localhost:3001/estacao-metro HTTP/1.1
+###
+GET http://localhost:3001/estacao-metro/1 HTTP/1.1
+
+###
+POST http://localhost:3001/estacao-metro HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "Estação Pirajá",
+    "linhaMetro":"1"
+}
+###
+DELETE  http://localhost:3001/estacao-metro/1 HTTP/1.1
+content-type: application/json
